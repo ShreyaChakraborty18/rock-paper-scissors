@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="styles.css" />
+    
+  </head>
+  <body>
+    <div class="container">
+      <!-- Header Part -->
+      <div id="scoreboard">
+        <div class="scoreboard-title">
+          <h2>ROCK</h2>
+          <h2>PAPER</h2>
+          <h2>SCISSORS</h2>
+        </div>
+        <div class="scores">
+          <div class="score computer-score">
+            <p class="score-title">COMPUTER</p>
+            <p class="score-title">SCORE</p>
+            <h1 id="num1">0</h1>
+          </div>
+          <div class="score user-score">
+            <p class="score-title">YOUR</p>
+            <p class="score-title">SCORE</p>
+            <h1 id="num2">0</h1>
+          </div>
+        </div>
+      </div>
+      <!-- Header part END -->
+
+      <!-- Main Part -->
+      <div class="main">
+        <div class="hands">
+          <div class="hand rock">
+            <!-- <img
+              class="bg-rock"
+              src="assets/rock-circle.png"
+              alt="background"
+            /> -->
+            <img
+              src="assets/rock.png"
+              alt="rock"
+              id="rock"
+              onclick="select('Rock')"
+            />
+          </div>
+
+          <div class="hand scissors">
+            <!-- <img
+              class="bg-scissors"
+              src="assets/scissors-circle.png"
+              alt="background"
+            /> -->
+            <img
+              src="assets/scissors.png"
+              alt="scissors"
+              id="scissors"
+              onclick="select('Scissors')"
+            />
+          </div>
+
+          <div class="hand paper">
+            <!-- <img
+              class="bg-paper"
+              src="assets/paper-circle.png"
+              alt="background"
+            /> -->
+            <img
+              src="assets/paper.png"
+              alt="paper"
+              id="paper"
+              onclick="select('Paper')"
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- Main Part END -->
+
+      <!--result part Start    -->
+
+      <div class="contest">
+        <div class="user">
+          <h1>You Picked</h1>
+          <div class="hand-img">
+            <img src="/assets/paper.png" alt="question" id="user-picked" />
+          </div>
+        </div>
+        <div class="middle">
+          <div class="decision">
+            <h1 id="result">YOU WIN</h1>
+            <h5>AGAINST PC</h5>
+          </div>
+          <div class="play-again" onclick="playAgain()">Play Again</div>
+        </div>
+        <div class="computer">
+          <h1>PC Picked</h1>
+          <div class="hand-img">
+            <img src="/assets/rock.png" alt="question" id="computer-picked" />
+          </div>
+        </div>
+      </div>
+
+      <!-- result part END  -->
+    </div>
+
+    <div id="ruleBox">
+      <div class="rule-modal">
+        <button class="close" onclick="hideRule()"><img src="assets/X.png" alt="X"></button>
+        <h1>Game Rules</h1>
+        <ul class="custom-list">
+          <li>
+            <img src="assets/Rectangle 5.png" alt=""> Rock beats scissors, scissors beat paper, and paper beats rock.
+          </li>
+          <li>
+            <img src="assets/Rectangle 5.png" alt=""> Agree ahead of time whether you’ll count off “rock, paper, scissors,
+            shoot” or just “rock, paper, scissors.”
+          </li>
+          <li>
+            <img src="assets/Rectangle 5.png" alt=""> Use rock, paper, scissors to settle minor decisions or simply play
+            to pass the time
+          </li>
+          <li>
+            <img src="assets/Rectangle 5.png" alt=""> If both players lay down the same hand, each player lays down
+            another hand
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer">
+      <div class="rules" onclick="showRules()">RULES</div>
+      <div class="rules" id="next" onclick="winContainer()">NEXT</div>
+    </div>
+
+    <div class="congrats-page">
+      <div class="content">
+        <!-- <img src="/assets/stars.png" alt="stars" /> -->
+        <img src="/assets/trophy.png" alt="trophy" />
+      </div>
+      <h1>HURRAY!!</h1>
+      <h5>YOU WON THE GAME!!</h5>
+      <button onclick="showContainer()" id="win-play-again">PLAY AGAIN</button>
+      <div class="footer">
+        <div class="rules" onclick="showRules()">RULES</div>
+      </div>
+    </div>
+
+    <script src="index.js"></script>
+  </body>
+</html>
+
+

@@ -1,0 +1,505 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;600&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #8cc461;
+  font-family: "Roboto";
+  overflow-y: hidden;
+}
+
+.container {
+  width: 100%;
+  height: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+#scoreboard {
+  position: absolute;
+  top: 75px;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 158px;
+  width: 950px;
+  border-radius: 13px;
+  margin: 0 auto;
+  border: 2px solid #ffffff;
+  display: flex;
+  justify-content: space-between;
+}
+
+.main {
+  margin-top: 180px;
+}
+
+.scores {
+  display: flex;
+  align-items: center;
+  margin: 10px;
+}
+
+.score {
+  width: 139px;
+  height: 128px;
+  background: #ffffff;
+  border-radius: 9px;
+  margin-left: 10px;
+}
+
+.computer-score {
+  margin-right: 10px;
+}
+
+.user-score {
+  margin-right: 5px;
+}
+
+h1,
+h2 {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 36px;
+  color: #ffff;
+  line-height: 1.2;
+  margin: 0;
+}
+
+.scoreboard-title {
+  display: inline-block;
+  align-items: center;
+  height: 100%;
+  margin: 10px 14px;
+}
+
+.scoreboard-title h1 {
+  margin: 0;
+  margin-right: 20px;
+}
+
+@media screen and (max-width: 768px) {
+  #scoreboard {
+    width: 100%;
+  }
+
+  h1,
+  h2 {
+    font-size: 30px;
+  }
+
+  .scoreboard-title h1 {
+    margin-right: 10px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  h1,
+  h2 {
+    font-size: 20px;
+  }
+
+  .scoreboard-title h1 {
+    margin-right: 5px;
+  }
+}
+
+.score-title {
+  font-family: Roboto;
+  font-size: 14px;
+  font-weight: 600;
+  /* line-height: 20px; */
+  letter-spacing: 0.1em;
+  text-align: center;
+  margin: 5px 10px;
+}
+
+#num1,
+#num2 {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 700;
+  font-size: 68px;
+  line-height: 80px;
+  text-align: center;
+  color: #252525;
+}
+
+.hands {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 50px ;
+    width: 90%; 
+    max-width: 500px; 
+    height: 430px;
+    flex-wrap: wrap;
+    background-image: url("assets/bg-triangle.svg");
+    background-repeat: no-repeat !important;
+    background-position: center;
+  }
+  
+  .scissors {
+    margin-left: 4%; 
+  }
+  
+  .paper {
+    margin-right: 2%; 
+  }
+  
+  .rock {
+    margin-right: 6%;
+  }
+
+  .hands .hand {
+    cursor: pointer;
+  }
+  
+  .hands .hand:hover {
+    transform: translate3d(0px, -8px, 0px);
+  }
+  
+
+  @media screen and (max-width: 768px) {
+    .hands {
+      margin: 50px auto; 
+    }
+  
+    .scissors {
+      margin-left: 2%; 
+    }
+  
+    .paper {
+      margin-right: 1%; 
+    }
+  }
+  
+
+.contest {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  margin: 40px auto;
+  width: 650px;
+  height: 430px;
+}
+
+.contest .hand-img {
+  position: relative;
+}
+.contest img {
+  width: 80%;
+  height: 80%;
+}
+
+.contest > div {
+  flex: 1;
+}
+.contest h1 {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 17px;
+  line-height: 20px;
+  letter-spacing: 0.1em;
+  color: #ffffff;
+  margin-bottom: 50px;
+  text-align: center;
+  z-index: 2; 
+}
+
+.contest .hand-img:hover {
+  display: flex;
+  justify-content: center;
+}
+
+.contest .hand-img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.middle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+}
+
+.contest .middle h1,
+h5 {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 39px;
+  line-height: 46px;
+  letter-spacing: 0;
+  margin-bottom: 0;
+}
+
+.middle h5 {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 800;
+  font-size: 25px;
+  line-height: 29px;
+  text-align: center;
+  letter-spacing: 0.1em;
+  color: #ffffff;
+}
+
+.play-again {
+  margin-top: 40px; 
+  margin-bottom: 20px; 
+  background: #ffffff;
+  border-radius: 9px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 18px;
+  letter-spacing: 0.1em;
+  color: #6b6b6b;
+  cursor: pointer;
+  transition: all 0.15s;
+  padding: 10px 20px;
+}
+
+.play-again:hover {
+  background: #ebebeb;
+  color: #252525;
+  transform: translate3d(0px, -2px, 0px);
+}
+
+@media screen and (max-width: 768px) {
+  .hands {
+    width: 100%;
+    height: 100%;
+  }
+
+  .hands .hand {
+    margin: 10px;
+  }
+
+  .contest {
+    width: 100%;
+    height: 100%;
+  }
+
+  .contest .hand-img {
+    margin: 10px;
+  }
+}
+
+.footer {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  padding: 10px 116px;
+}
+.rules {
+  margin-top: -50px;
+  border-radius: 9px;
+  font-family: "Roboto";
+  font-style: normal;
+  border: 2px solid #ffffff;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 18px;
+  letter-spacing: 0.1em;
+  color: #ffffff;
+  cursor: pointer;
+  transition: all 0.15s;
+  padding: 10px 40px;
+  margin-bottom: 10px;
+}
+#next {
+  margin-right: 10px;
+  margin-left: 18px;
+}
+
+.congrats-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+.congrats-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+.congrats-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.content {
+  background-image: url(./assets/stars.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  width: 80%;
+  max-width: 400px;
+  height: 30%;
+  max-height: 400px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.content img {
+  max-width: 80%;
+  max-height: 70%;
+}
+
+.congrats-page h1 {
+  width: 464px;
+  height: 86px;
+  left: 436px;
+  top: 422px;
+
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 91px;
+  line-height: 107px;
+  text-align: center;
+  letter-spacing: 0.1em;
+
+  color: #ffffff;
+}
+
+.congrats-page h5 {
+  width: 500px;
+  height: 48px;
+  left: 442px;
+  margin: 20px;
+  top: 533px;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 41px;
+  line-height: 48px;
+  text-align: center;
+  letter-spacing: 0.1em;
+  color: #ffffff;
+}
+
+#win-play-again {
+  cursor: pointer;
+  padding: 15px 50px;
+  background: #ffffff;
+  border-radius: 9px;
+  border: 0;
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 600;
+  font-size: 15px;
+  line-height: 18px;
+  letter-spacing: 0.1em;
+  color: #6b6b6b;
+  margin-top: 8%;
+}
+
+.rule-modal {
+  justify-content: flex-end;
+  position: absolute;
+  right: 20px;
+  bottom: 65px;
+  width: 13%;
+  background: #004429;
+  border: 7px solid #ffffff;
+  border-radius: 13px;
+  width: 290px;
+  height: 332px;
+  padding: 20px 25px;
+}
+
+.rule-modal h1 {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 500;
+  font-size: 29px;
+  line-height: 34px;
+  text-align: center;
+  color: #ffffff;
+  margin-bottom: 5px;
+  padding: 4px 28px;
+}
+
+.rule-modal li {
+  font-family: "Roboto";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 30px;
+  color: #ffffff;
+}
+
+.close {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  background: #ff0000;
+  border: 5px solid #ffffff;
+  font-family: "Dangrek";
+  font-style: normal;
+  font-weight: 400;
+  font-size: 30px;
+  position: relative;
+  color: #ffffff;
+  position: absolute;
+  right: -18px;
+  bottom: 287px;
+  cursor: pointer;
+}
+
+.close img {
+  padding-top: 4px;
+}
+
+.custom-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.custom-list li {
+  position: relative;
+  margin-bottom: 8px;
+  padding-left: 30px;
+  line-height: 1.4;
+}
+
+.custom-list li img {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 8px;
+  height: auto;
+  margin-right: 10px;
+}
+
+.green-background {
+  border: black;
+  margin-bottom: 0.9rem;
+  box-shadow: 0 0 0 10px #1da82b inset, 0 0 0 20px #2e9a25, 0 0 0 40px #1da82b90,
+    0 0 0 64px #2e9a2563;
+  border-radius: 50%;
+  position: relative;
+  z-index: 1;
+}
