@@ -1,15 +1,10 @@
 let nextB = document.querySelector("#next");
-// console.log(nextB);
 nextB.style.display = "none";
 
 const winPlay = document.querySelector("#win-play-again");
-// winPlay.style.display = "none";
 
 let userHandImg = document.getElementById("user-picked");
 let computerHandImg = document.getElementById("computer-picked");
-
-// localStorage.setItem("userScore", 0);
-// localStorage.setItem("computerScore", 0);
 
 let userScore = Number(localStorage.getItem("userScore"));
 let ComScore = Number(localStorage.getItem("computerScore"));
@@ -37,22 +32,14 @@ const select = (hand) => {
   let contest = document.querySelector(".contest");
   contest.style.display = "flex";
 
-  // set the user hand image
   document.getElementById("user-picked").src = `./assets/${hand}.png`;
 
-  // set the computer hand image
   let computerHand = computerChose();
   document.getElementById(
     "computer-picked"
   ).src = `./assets/${computerHand}.png`;
 
-  // call the compare hands function
   compareHands(hand, computerHand);
-//   if (userScore > ComScore) {
-//     nextB.style.display = "flex";
-//   } else {
-//     nextB.style.display = "none";
-//   }
 };
 
 const updateScore = (uScore, cScore) => {
@@ -65,7 +52,6 @@ const updateScore = (uScore, cScore) => {
 const playAgain = () => {
   let hands = document.querySelector(".hands");
   let contest = document.querySelector(".contest");
-
   contest.style.display = "none";
   hands.style.display = "flex";
   nextB.style.display = "none";
@@ -93,23 +79,19 @@ const compareHands = (userChoice, computerChoice) => {
   if (userChoice === "Rock") {
     if (computerChoice === "Scissors") {
       winner.textContent = "YOU WIN";
-    //   userHandImg.style.backgroundImage = "url('./assets/ripple.png')";
       userHandImg.classList.add("green-background");
       nextB.style.display = "flex";
       userScore += 1;
       localStorage.setItem("userScore", userScore);
       console.log("updated userScore:", userScore);
-      // console.log(userScore);
       updateScore(userScore, ComScore);
       return;
     } else {
       winner.textContent = "YOU LOST";
-    //   computerHandImg.style.backgroundImage = "url('./assets/ripple.png')";
       computerHandImg.classList.add("green-background");
       ComScore += 1;
       localStorage.setItem("computerScore", ComScore);
 
-      // console.log(ComScore);
       updateScore(userScore, ComScore);
       return;
     }
@@ -117,22 +99,18 @@ const compareHands = (userChoice, computerChoice) => {
   if (userChoice === "Paper") {
     if (computerChoice === "Scissors") {
       winner.textContent = "YOU LOST";
-    //   computerHandImg.style.backgroundImage = "url('./assets/ripple.png')";
       computerHandImg.classList.add("green-background");
       ComScore += 1;
       localStorage.setItem("computerScore", ComScore);
-      // console.log(ComScore);
       updateScore(userScore, ComScore);
       return;
     } else {
       winner.textContent = "YOU WIN";
-    //   userHandImg.style.backgroundImage = "url('./assets/ripple.png')";
       userHandImg.classList.add("green-background");
       nextB.style.display = "flex";
       userScore += 1;
       localStorage.setItem("userScore", userScore);
       console.log("updated userScore:", userScore);
-      // console.log(userScore);
       updateScore(userScore, ComScore);
       return;
     }
@@ -140,22 +118,18 @@ const compareHands = (userChoice, computerChoice) => {
   if (userChoice === "Scissors") {
     if (computerChoice === "Rock") {
       winner.textContent = "YOU LOST";
-    //   computerHandImg.style.backgroundImage = "url('./assets/ripple.png')";
       computerHandImg.classList.add("green-background");
       ComScore += 1;
       localStorage.setItem("computerScore", ComScore);
-      // console.log(ComScore);
       updateScore(userScore, ComScore);
       return;
     } else {
       winner.textContent = "YOU WIN";
-    //   userHandImg.style.backgroundImage = "url('./assets/ripple.png')";
       userHandImg.classList.add("green-background");
       nextB.style.display = "flex";
       userScore += 1;
       localStorage.setItem("userScore", userScore);
       console.log("updated userScore:", userScore);
-      // console.log(userScore);
 
       updateScore(userScore, ComScore);
       return;
@@ -172,30 +146,21 @@ const showContainer = () => {
   hands.style.display = "flex";
   let contest = document.querySelector(".contest");
   contest.style.display = "none";
-//   localStorage.setItem("userScore", 0);
-//   localStorage.setItem("computerScore", 0);
-//   userScore = 0;
-//   ComScore = 0;
-//   console.log("player", localStorage.getItem("userScore"));
   updateScore(userScore, ComScore);
   nextB.style.display = "none";
   container2.style.display = "none";
 };
 
 const winContainer = () => {
-//   let container = document.querySelector(".container");
-//   let footer = document.querySelector(".footer");
   container.style.display = "none";
   footer.style.display = "none";
   winPlay.style.display = "flex";
   container2.style.display = "flex";
   userHandImg.classList.remove("green-background");
   computerHandImg.classList.remove("green-background");
-
 };
   
   
-
 let ruleBox = document.querySelector("#ruleBox");
 ruleBox.style.display = "none";
 const hideRule = () => {
